@@ -1,0 +1,22 @@
+PODS:
+  - AsyncDisplayKit (1.2.2):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 1.2.2)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.2.2)
+
+DEPENDENCIES:
+  - AsyncDisplayKit (from `https://github.com/facebook/AsyncDisplayKit`, branch `master`)
+
+EXTERNAL SOURCES:
+  AsyncDisplayKit:
+    :branch: master
+    :git: https://github.com/facebook/AsyncDisplayKit
+
+CHECKOUT OPTIONS:
+  AsyncDisplayKit:
+    :commit: ca9b1caca42d83913f44b02c1c527a3b44b9fe41
+    :git: https://github.com/facebook/AsyncDisplayKit
+
+SPEC CHECKSUMS:
+  AsyncDisplayKit: 70634bfc4bce38b0de85fec7da20a669fdbc8809
+
+COCOAPODS: 0.38.2
