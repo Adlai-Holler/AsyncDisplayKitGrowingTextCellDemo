@@ -7,6 +7,7 @@
 
 // this will get called when our height may have changed
 @property (nonatomic, strong) dispatch_block_t invalidate;
+@property (nonatomic) BOOL shouldInvalidateAfterLayout;
 @end
 @implementation TestCellNode
 
@@ -14,7 +15,7 @@
 	self = [super init];
 	if (!self) { return nil; }
 	self.textNode = [ASEditableTextNode new];
-	self.textNode.attributedText = [[NSAttributedString alloc] initWithString:@"Hello world. Welcome to \"will it wrap?\""];
+	self.textNode.attributedText = [[NSAttributedString alloc] initWithString:@"Hello world. Welcome to \"will it grow?\""];
 	[self addSubnode:self.textNode];
 	self.textNode.delegate = self;
 	return self;
@@ -25,11 +26,9 @@
 }
 
 - (void)editableTextNodeDidUpdateText:(ASEditableTextNode *)editableTextNode {
-//	None of this helps:
+//	NOTE: Uncommenting this breaks everything, which is unexpected
 //	[self invalidateCalculatedLayout];
-//	[editableTextNode invalidateCalculatedLayout];
-//	[self setNeedsLayout];
-//	[editableTextNode setNeedsLayout];
+	[self setNeedsLayout];
 	self.invalidate();
 }
 
